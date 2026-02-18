@@ -1,32 +1,34 @@
-import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
-img = cv2.imread("img.jpg")
-from operator import add
-from functools import reduce
+def build_t_pyramid(image, levels):
+    pyramid = [image]
 
-def split4(image):
-    half_split = np.array_split(image,2)
-    res = map(lambda x: np.array_split(x,2,axis = 1),half_split)
-    return reduce(add,res)
+    for _ in range(levels - 1):
+        image = cv2.pyrDown(image)
+        pyramid.append(image)
 
-split_img = split4(img)
-split_img[0].shape,split_img[1].shape
-fig,axs = plt.subplots(2,2)
-axs[0,0].imshow(split_img[0])
-axs[0,1].imshow(split_img[1])
-axs[1,0].imshow(split_img[2])
-axs[1,1].imshow(split_img[3])
+    return pyramid
 
-def concatenate4(north_west,north_east,south_west,south_east):
-    top = np.concatenate((north_west,north_east),axis = 1)
-    bottom = np.concatenate((south_west,south_east),axis = 1)
-    return np.concatenate((top,bottom),axis = 0)
 
-full_img = concatenate4(split_img[0],split_img[1],split_img[2],split_img[3])
-plt.figure()
-plt.imshow(full_img)
-plt.show()
+def main():
+    image_path = "img.jpg"
+    levels = 3
+    original_image = cv2.imread(image_path)
 
-<img width="405" height="475" alt="Screenshot 2026-02-18 092154" src="https://github.com/user-attachments/assets/958154a1-fd1c-4bbf-97ce-398333565dbb" />
+    if original_image is None:
+        print("Error: could not load the image")
+        return
+
+    t_pyramid = build_t_pyramid(original_image, levels)
+
+    for i, level_image in enumerate(t_pyramid):
+        cv2.imshow(f"Levels {i}", level_image)
+        cv2.waitKey(0)
+
+    cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    main()
+<img width="318" height="209" alt="Screenshot 2026-02-18 094403" src="https://github.com/user-attachments/assets/387d0aed-a5c6-4593-9074-7a0223508dc1" />
