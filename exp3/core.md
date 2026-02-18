@@ -37,4 +37,8 @@ for i in range(6):
     plt.axis('off')
 
 plt.show()
+
 <img width="669" height="358" alt="Screenshot 2026-02-18 092252" src="https://github.com/user-attachments/assets/8cca4425-df39-4d6a-a07b-7a3f2b437f5f" />
+
+<img width="1599" height="762" alt="image" src="https://github.com/user-attachments/assets/ce59bad6-3d86-4b38-a311-fe4d5a9cff5a" />
+
