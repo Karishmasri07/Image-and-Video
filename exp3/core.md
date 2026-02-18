@@ -42,3 +42,5 @@ plt.show()
 
 <img width="1599" height="762" alt="image" src="https://github.com/user-attachments/assets/ce59bad6-3d86-4b38-a311-fe4d5a9cff5a" />
 
+<img width="1594" height="769" alt="image" src="https://github.com/user-attachments/assets/99a53f3b-3c11-4136-8eb8-9a465d3c1ca7" />
+
