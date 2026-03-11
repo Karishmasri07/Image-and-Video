@@ -48,4 +48,6 @@ while True:
 cap.release()
 
 <img width="637" height="595" alt="image" src="https://github.com/user-attachments/assets/2e333211-7a66-44fa-8bd7-7663dd64f60d" />
+<img width="641" height="589" alt="image" src="https://github.com/user-attachments/assets/fc24daed-a5e3-4928-afc1-2844361c0d4e" />
+<img width="546" height="599" alt="image" src="https://github.com/user-attachments/assets/d39e2df0-3414-4594-ac11-d1967d24723a" />
 
